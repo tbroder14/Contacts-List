@@ -30,19 +30,21 @@
 from time import sleep
 from newContact import *
 from editContact import *
+from phoneNumberFormat import *
 
 sleep(0.5)
 print("Welcome to your contacts list!")
 sleep(0.85)
 
-contacts = {"josh": '12345', "Trevor": "12345"}
+contacts = {"Josh": '123-456-7890', "Trevor": "123-456-7890"}
+# print(contacts.values())
 
 while True:
 
     selection = input("Would you like to add a new contact [N], edit an existing contact [E], or view your entire contact list [V]?" + "\n").lower()
     if selection == "n":
         contacts = newContact(contacts)
-        print(contacts)
+        # print(contacts)
 
     elif selection == "e":
         contacts = editContact(contacts)
@@ -54,4 +56,5 @@ while True:
 
     else:
         print("Please select a valid option by typying either [N], [E], or [V].")
+        sleep(1.5)
         continue

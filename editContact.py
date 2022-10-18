@@ -1,4 +1,4 @@
-
+from phoneNumberFormat import *
 
 def editContact(contacts):
     print("Which contact would you like to edit?")
@@ -17,6 +17,7 @@ def editContact(contacts):
     # if input is in dictionary, then ask the user for the updated phone number
     if nameFound:
         editNumber = input("Please enter the updated phone number." + "\n")
+        editNumber = phoneValidator(editNumber)
         contacts[editName] = editNumber
 
     else:
